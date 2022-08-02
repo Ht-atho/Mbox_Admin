@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+<!--    <test name="Windows_Chrome_Test">-->
+<!--        <parameter name="platform" value="Windows"/>-->
+<!--        <parameter name="browser" value="Chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testSuiteCollection.RunCukeTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Windows_Firefox_Test">
+        <parameter name="platform" value="Windows"/>
+        <parameter name="browser" value="Firefox"/>
+        <classes>
+            <class name="testSuiteCollection.RunCukeTest"/>
+        </classes>
+    </test>
+<!--    <test name="Windows_IE_Test">-->
+<!--        <parameter name="platform" value="Windows"/>-->
+<!--        <parameter name="browser" value="Internet Explorer"/>-->
+<!--        <classes>-->
+<!--            <class name="testSuiteCollection.RunCukeTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Windows_phantom_Test">-->
+<!--        <parameter name="platform" value="Windows"/>-->
+<!--        <parameter name="browser" value="HeadlessMode"/>-->
+<!--        <classes>-->
+<!--            <class name="testSuiteCollection.RunCukeTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
