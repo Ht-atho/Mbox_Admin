@@ -42,8 +42,8 @@ public class LoginPage extends PageBase {
                 password = "admin@123";
                 break;
             case "Admin_DN":
-                username = "tuyen";
-                password = "tuyen@123";
+                username = "mboxAuto";
+                password = "admin@123";
                 break;
             default:
                 System.out.println("Không phải account admin đã config.");

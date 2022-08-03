@@ -1,4 +1,4 @@
-Feature: Config Ứng Lương
+Feature: Admin Mbox - Config Ứng Lương
 
   Background:
     Given "Admin_Mbox" đăng nhập thành công vào Mbox Admin
@@ -23,7 +23,7 @@ Feature: Config Ứng Lương
       | Số tiền ứng tối thiểu | 500000  |
       | Số tiền ứng tối đa    | 2000000 |
 
-  @UngLuong_9pay @UL_95 @UL_97
+  @UngLuong_9pay @UL_95 @UL_97 @UL_98
   Scenario: Để trống trường số tiền ứng tối thiểu, Số tiền ứng tối đa
     And Truy cập theo menu
       | Cấu hình |
@@ -49,7 +49,10 @@ Feature: Config Ứng Lương
       | Cấu hình |
     And Select tab : "Third Party"
     And Select sub tab : "9Pay"
-    When Nhập value vào nhiều field
+    And Nhập value vào nhiều field
       | label                 | value |
       | Số tiền ứng tối thiểu | 8000  |
-    When Click button "Cập nhật" bản ghi
+    And Click button "Cập nhật" bản ghi
+    And Verify attribute của trường input
+      | label                 | attribute | expect |
+      | Số tiền ứng tối thiểu | min       | 10000  |

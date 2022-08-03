@@ -148,23 +148,16 @@ public class CommonSteps {
 
     }
     @Then("Verify attribute của trường input")
-    public void verifyAttributeValue(DataTable dataTable) throws InterruptedException {
+    public void verifyAttributeValue(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> stringStringMap : list) {
-            String value = stringStringMap.get("value");
+            String value = stringStringMap.get("attribute");
             String label = stringStringMap.get("label");
+            String expect = stringStringMap.get("expect");
             waitforPageLoad();
             actions.moveToElement(commonPage.inputWithLabel(label));
-            String actual = commonPage.inputWithLabel(label).getAttribute("value");
-            if (value != null) {
-                if (value.contains("valueNumber_")) {
-                    int index = Integer.parseInt(value.split("_")[1]) - 1;
-                    value = globalVariable.get(index);
-                }
-            } else {
-                value = "";
-            }
-            Assert.assertEquals(actual, value, "Assert failed. Expect: " + value + " but actual: " + actual);
+            String actual = commonPage.inputWithLabel(label).getAttribute(value);
+            Assert.assertEquals(actual, expect, "Assert failed. Expect: " + expect + " but actual: " + actual);
         }
     }
 }

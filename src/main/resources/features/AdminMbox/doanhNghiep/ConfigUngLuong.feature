@@ -1,4 +1,4 @@
-Feature: Config Ứng Lương
+Feature: Admin Mbox - Config Ứng Lương
 
   Background:
     Given "Admin_Mbox" đăng nhập thành công vào Mbox Admin
@@ -14,18 +14,18 @@ Feature: Config Ứng Lương
     When Click Hành Động "Xem chi tiết"
     When Click button "Chỉnh sửa" in Doanh nghiep page
     When Nhập value vào nhiều field
-      | label   | value    |
-      | <label> | <expect> |
+      | label   | value |
+      | <label> |       |
     When Click button "Cập nhật" bản ghi
     Then Hiển thị alert thành công
     When Refresh the web
     Then Verify dữ liệu hiển thị ở trường input
-      | label   | value   |
-      | <label> | <value> |
+      | label   | value |
+      | <label> |       |
 
     Examples:
-      | TestCase | label                        | value | expect |
-      | UL_74    | Mức ứng tối đa/nhân sự/tháng |       |        |
+      | label                        |
+      | Mức ứng tối đa/nhân sự/tháng |
 
   @UngLuong @UL_75
   Scenario: Admin  mức lương tối đa/ nhân sự/ tháng = 0
