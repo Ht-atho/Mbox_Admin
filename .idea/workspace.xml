@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07747436-9c15-4ba6-ba79-8480e42d0107" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/features/AdminDN/configUngLuong.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dataTest/configDoanhNghiep_DN_18/Logo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/PageBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/doanhNghiep/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/doanhNghiep/ConfigUngLuong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/ninePay/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/9pay/ConfigUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/9pay/ConfigUngLuong.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/Login.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/doanhNghiep/ConfigUngLuong.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/doanhNghiep/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/doanhNghiep/ConfigUngLuong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/testSuiteCollection" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/dataTest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,18 +71,18 @@
       <recent name="configMobile" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\test\resources\dataTest" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\java\testSuiteCollection" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\test\resources" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\java\coreMobile" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\java" />
-      <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\java\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\test\resources\dataTest\configDoanhNghiep_DN_18" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\resources\features\AdminMbox\9pay" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\resources\features\AdminMbox" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\resources\features\doanhNghiep" />
       <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\main\java" />
-      <recent name="C:\Users\ADMIN\Desktop\Mbox0.0\src\test\resources\browserDriver" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="stepdefinition" />
@@ -92,11 +92,35 @@
       <recent name="mobileStepDef" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ConfigUngLuong">
-    <configuration name="C:/Users/ADMIN/Desktop/Mbox0.0/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ConfigUngLuong (2)">
+    <configuration name="ConfigUngLuong (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Mbox0.0" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testSuiteCollection.AdminMbox.ninePay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testSuiteCollection.AdminMbox.ninePay" />
+      <option name="MAIN_CLASS_NAME" value="testSuiteCollection.AdminMbox.ninePay.ConfigUngLuong" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigUngLuong (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Mbox0.0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testSuiteCollection.AdminMbox.doanhNghiep.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testSuiteCollection.AdminMbox.doanhNghiep" />
+      <option name="MAIN_CLASS_NAME" value="testSuiteCollection.AdminMbox.doanhNghiep.ConfigUngLuong" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -156,10 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ConfigUngLuong (2)" />
+        <item itemvalue="TestNG.ConfigUngLuong (1)" />
         <item itemvalue="TestNG.ConfigUngLuong" />
         <item itemvalue="TestNG.RunCukeTest" />
         <item itemvalue="TestNG.LoginRun" />
-        <item itemvalue="TestNG.C:/Users/ADMIN/Desktop/Mbox0.0/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +204,8 @@
       <workItem from="1659062133249" duration="12438000" />
       <workItem from="1659318585147" duration="15867000" />
       <workItem from="1659341742554" duration="11202000" />
-      <workItem from="1659404625977" duration="17975000" />
+      <workItem from="1659404625977" duration="19538000" />
+      <workItem from="1659491653735" duration="22502000" />
     </task>
     <servers />
   </component>
@@ -196,21 +222,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/PageBase.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/PageBase.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

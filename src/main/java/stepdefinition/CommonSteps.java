@@ -17,6 +17,7 @@ import static pages.HomePage.waitforPageLoad;
 public class CommonSteps {
     CommonPage commonPage = new CommonPage();
     HomePage homePage = new HomePage();
+
     @When("Tìm kiếm với nhiều keyword")
     public void search(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
@@ -46,18 +47,45 @@ public class CommonSteps {
             String value = stringStringMap.get("value");
             String label = stringStringMap.get("label");
             waitforPageLoad();
-            commonPage.inputWithLabel(label).clear();
-            actions.moveToElement(commonPage.inputWithLabel(label));
             if (value != null) {
                 if (value.contains("today_")) {
                     int datePlus = Integer.parseInt(value.split("_")[1]) - 1;
                     value = todayPlusDate(datePlus);
                     globalVariable.add(value);
+                } else if (value.contains("random_")) {
+                    int quantity = Integer.parseInt(value.substring(8, value.lastIndexOf("_")));
+                    String text = randomKey(quantity);
+                    value = value.substring(0, value.lastIndexOf("+")) + text + value.substring(value.lastIndexOf("_") + 1);
+                    globalVariable.add(value);
+                } else if (value.contains("randomNumber_")) {
+                    System.out.println(value.substring(15, value.lastIndexOf("_")));
+
+                    int quantity = Integer.parseInt(value.substring(15, value.lastIndexOf("_")));
+                    String text = randomNumber(quantity);
+                    value = value.substring(0, value.indexOf("_")) + text + value.substring(value.lastIndexOf("_") + 1);
+                    globalVariable.add(value);
                 }
-                commonPage.inputWithLabel(label).sendKeys(value);
+
+                if (label.contains("textarea")) {
+                    label = label.split("_")[1];
+                    commonPage.textareaWithLabel(label).clear();
+                    actions.moveToElement(commonPage.textareaWithLabel(label));
+                    commonPage.textareaWithLabel(label).sendKeys(value);
+                } else {
+                    commonPage.inputWithLabel(label).clear();
+                    actions.moveToElement(commonPage.inputWithLabel(label));
+                    commonPage.inputWithLabel(label).sendKeys(value);
+                }
+            }
+            else {
+                if (label.contains("textarea")) {
+                    label = label.split("_")[1];
+                    commonPage.textareaWithLabel(label).clear();
+                } else {
+                    commonPage.inputWithLabel(label).clear();
+                }
             }
         }
-
 
     }
 
@@ -90,10 +118,16 @@ public class CommonSteps {
         for (Map<String, String> stringStringMap : list) {
             String value = stringStringMap.get("value");
             String label = stringStringMap.get("label");
+            String actual ;
             waitforPageLoad();
-            actions.moveToElement(commonPage.inputWithLabel(label));
             Thread.sleep(5000);
-            String actual = commonPage.inputWithLabel(label).getAttribute("value");
+            if (label.contains("textarea")){
+                label = label.split("_")[1];
+                actual = commonPage.textareaWithLabel(label).getAttribute("value");
+            }
+            else {
+                actual = commonPage.inputWithLabel(label).getAttribute("value");
+            }
             if (value != null) {
                 if (value.contains("valueNumber_")) {
                     int index = Integer.parseInt(value.split("_")[1]) - 1;
@@ -102,6 +136,7 @@ public class CommonSteps {
             } else {
                 value = "";
             }
+
             Assert.assertEquals(actual, value, "Assert failed. Expect: " + value + " but actual: " + actual);
         }
     }
@@ -126,6 +161,18 @@ public class CommonSteps {
             commonPage.btnRadio(label, value).click();
         }
     }
+    @When("Select option ở nhiều field")
+    public void selectVaoNhieuField(DataTable dataTable) {
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> stringStringMap : list) {
+            String value = stringStringMap.get("value");
+            String label = stringStringMap.get("label");
+            if (commonPage.selectOption(label, value).isSelected()) {
+                commonPage.selectOption(label, value).click();
+            }
+            commonPage.selectOption(label, value).click();
+        }
+    }
 
     @Then("Button radio đã select")
     public void verifyRadioValue(DataTable dataTable) {
@@ -138,15 +185,18 @@ public class CommonSteps {
             Assert.assertTrue(actual, "Assert failed. Expect: true but actual: " + actual);
         }
     }
+
     @When("Select tab : {string}")
     public void select_tab(String menu) {
         commonPage.tab(menu).click();
     }
+
     @When("Select sub tab : {string}")
     public void select_sub_tab(String menu) {
         commonPage.subTab(menu).click();
 
     }
+
     @Then("Verify attribute của trường input")
     public void verifyAttributeValue(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
@@ -158,6 +208,26 @@ public class CommonSteps {
             actions.moveToElement(commonPage.inputWithLabel(label));
             String actual = commonPage.inputWithLabel(label).getAttribute(value);
             Assert.assertEquals(actual, expect, "Assert failed. Expect: " + expect + " but actual: " + actual);
+        }
+    }
+    @When("Import file với đường dẫn vào label")
+    public void importFilr(DataTable dataTable) {
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> stringMap : list) {
+            String path = System.getProperty("user.dir") +"/src/test/resources/dataTest"+ stringMap.get("path");
+            commonPage.inputFile(stringMap.get("name")).sendKeys(path);
+
+        }
+    }
+    @Then("Option value đã select")
+    public void verifySelectValue(DataTable dataTable) {
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> stringStringMap : list) {
+            String value = stringStringMap.get("value");
+            String label = stringStringMap.get("label");
+            waitforPageLoad();
+            boolean actual = Boolean.parseBoolean(commonPage.selectOption(label, value).getAttribute("selected"));
+            Assert.assertTrue(actual, "Assert failed. Expect: true but actual: " + actual);
         }
     }
 }

@@ -4,8 +4,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        tags = "@UL_90",
-        features = "src/main/resources/features/ConfigUngLuong.feature",
+        tags = "@DN_02",
+        features = "src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java",
         glue = "stepdefinition",
         plugin = {"pretty","json:target/cucumber.json"}
 )
