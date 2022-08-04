@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07747436-9c15-4ba6-ba79-8480e42d0107" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/dataTest/configDoanhNghiep_DN_18/Logo.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/PageBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/HomePageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/HomePageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/ServiceHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/ServiceHooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/doanhNghiep/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/doanhNghiep/ConfigUngLuong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/AdminMbox/ninePay/ConfigUngLuong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testSuiteCollection/RunCukeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testSuiteCollection/RunCukeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

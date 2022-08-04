@@ -7,10 +7,8 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import pages.CommonPage;
 import pages.HomePage;
-
 import java.util.List;
 import java.util.Map;
-
 import static core.PageBase.*;
 import static pages.HomePage.waitforPageLoad;
 

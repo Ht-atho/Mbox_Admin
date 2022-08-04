@@ -1,5 +1,7 @@
 package core;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;;
 import org.openqa.selenium.interactions.Actions;
@@ -31,10 +33,9 @@ public class PageBase {
         wait = new WebDriverWait(driver, TIMEOUT, POLLING);
         driver.manage().window().maximize();
         globalVariable = new ArrayList<>();
-        System.out.println("before");
         driver.get("https://beta.mbox.vn/admin/login");
         Assert.assertTrue(driver.findElement(By.name("user_name")).isDisplayed());
-        File directory = new File(System.getProperty("user.dir") + "/Screenshots/Report");
+        File directory = new File(System.getProperty("user.dir") + "/target/screenshots/report");
         if (!directory.exists()) {
             System.out.println("Thư mục không tồn tại.");
         } else {
@@ -49,8 +50,15 @@ public class PageBase {
 
     public void tearDown() {
         driver.close();
+        genReportHtml();
     }
-
+    public void genReportHtml(){
+        try {
+            Runtime.getRuntime().exec("mvn.cmd cluecumber-report:reporting");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void setUpGlobalVariable() {
         globalVariable = new ArrayList<>();
     }

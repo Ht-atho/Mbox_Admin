@@ -11,7 +11,6 @@ public class LoginPage extends PageBase {
     //    khoi tao pageFactory de dung annotation @FinsBy
     public LoginPage() {
         PageFactory.initElements(driver, this);
-        System.out.println("khoi tao");
     }
 
     @FindBy(how = How.NAME, using = "user_name")
