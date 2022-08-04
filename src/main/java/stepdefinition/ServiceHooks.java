@@ -5,13 +5,9 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.plugin.event.Node;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-
-import java.io.IOException;
+import org.testng.annotations.AfterSuite;
 
 import static core.PageBase.*;
 
@@ -22,10 +18,6 @@ public class ServiceHooks {
     public void initTest() {
         PageBase.createDriver();
     }
-//    @BeforeTest
-//    public void createGlobalVariable() {
-//        PageBase.setUpGlobalVariable();
-//    }
 
     @After
     public void afterHooks(Scenario scenario) {
@@ -38,6 +30,6 @@ public class ServiceHooks {
 
     @AfterStep
     public void afterStep() throws Exception {
-        takeScreenShot( driver, "Screenshots/Report/");
+        takeScreenShot( driver, "target/screenshots/report/");
     }
 }

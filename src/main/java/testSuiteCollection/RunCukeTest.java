@@ -7,7 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
         tags = "",
         features = "src/main/resources/features",
         glue = "stepdefinition",
-        plugin = {"pretty","json:target/cucumber.json"}
+        plugin = {"pretty", "json:target/cucumber-report/cucumber.json"}
 )
 public class RunCukeTest extends AbstractTestNGCucumberTests {
 

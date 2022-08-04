@@ -10,4 +10,5 @@ public class CompanySteps {
     public void clickBtnInCompanyPage(String action) {
         companyPage.a_btnAction(action).click();
     }
+
 }

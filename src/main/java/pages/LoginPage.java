@@ -11,7 +11,6 @@ public class LoginPage extends PageBase {
     //    khoi tao pageFactory de dung annotation @FinsBy
     public LoginPage() {
         PageFactory.initElements(driver, this);
-        System.out.println("khoi tao");
     }
 
     @FindBy(how = How.NAME, using = "user_name")
@@ -42,8 +41,8 @@ public class LoginPage extends PageBase {
                 password = "admin@123";
                 break;
             case "Admin_DN":
-                username = "tuyen";
-                password = "tuyen@123";
+                username = "mboxAuto";
+                password = "admin@123";
                 break;
             default:
                 System.out.println("Không phải account admin đã config.");

@@ -26,6 +26,9 @@ public class CommonPage extends PageBase {
     public WebElement inputWithLabel(String label) {
         return driver.findElement(By.xpath("//label[contains(text(),'" + label + "')]/following-sibling::input"));
     }
+    public WebElement textareaWithLabel(String label) {
+        return driver.findElement(By.xpath("//label[contains(text(),'" + label + "')]/following-sibling::textarea"));
+    }
 
     public WebElement btnEditThongtin(String text) {
         return driver.findElement(By.xpath("//div[@class='mb-3']//button[contains(text(),'" + text + "')]"));
@@ -34,10 +37,16 @@ public class CommonPage extends PageBase {
     public WebElement btnRadio(String label,String text) {
         return driver.findElement(By.xpath("//label[contains(.,'" + label + "')]/following-sibling::div/label[contains(.,'" + text + "')]/input[@type='radio']"));
     }
+    public WebElement selectOption(String label,String text) {
+        return driver.findElement(By.xpath("//label[contains(text(),'"+label+"')]/following-sibling::select/option[contains(., '"+text+"')]"));
+    }
     public WebElement tab(String text) {
         return driver.findElement(By.xpath("//a[@role='tab' and contains(.,'"+ text+"')]"));
     }
     public WebElement subTab(String text) {
         return driver.findElement(By.xpath("//a[@role='presentation' and contains(.,'"+ text+"')]"));
+    }
+    public WebElement inputFile(String text) {
+        return driver.findElement(By.name(text));
     }
 }
