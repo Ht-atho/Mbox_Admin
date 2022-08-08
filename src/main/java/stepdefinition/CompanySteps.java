@@ -2,6 +2,7 @@ package stepdefinition;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
+//import org.jetbrains.annotations.NotNull;
 import pages.CompanyPage;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class CompanySteps {
         }
     }
     @When("Chọn giờ làm việc của ca")
-    public void chonGioCuaCa(DataTable dataTable) {
+    public void chonGioCuaCa( DataTable dataTable) {
         Map<String, String> data = dataTable.asMap(String.class, String.class);
             String start = data.get("Giờ bắt đầu");
             String end = data.get("Giờ kết thúc");

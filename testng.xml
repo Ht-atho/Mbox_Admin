@@ -12,7 +12,7 @@
         <parameter name="platform" value="Windows"/>
         <parameter name="browser" value="Firefox"/>
         <classes>
-            <class name="testSuiteCollection.RunCukeTest"/>
+            <class name="testSuiteCollection.AdminMbox.doanhNghiep.ConfigUngLuong"/>
         </classes>
     </test>
 <!--    <test name="Windows_IE_Test">-->
