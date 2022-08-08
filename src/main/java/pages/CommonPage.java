@@ -49,4 +49,7 @@ public class CommonPage extends PageBase {
     public WebElement inputFile(String text) {
         return driver.findElement(By.name(text));
     }
+    public WebElement checkBox(String text) {
+        return driver.findElement(By.xpath("//label[contains(.,'" + text + "')]/input[@type='checkbox']"));
+    }
 }

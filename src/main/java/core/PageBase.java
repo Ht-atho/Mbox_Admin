@@ -49,8 +49,9 @@ public class PageBase {
     }
 
     public void tearDown() {
-        driver.close();
         genReportHtml();
+        driver.close();
+
     }
     public void genReportHtml(){
         try {
