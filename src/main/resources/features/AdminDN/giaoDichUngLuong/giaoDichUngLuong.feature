@@ -11,7 +11,7 @@ Feature: Admin Mbox - Config Ứng Lương
     When Click Hành Động "Xem chi tiết"
     When Click button "Chỉnh sửa" in Doanh nghiep page
 
-  @UngLuong @DN_02 @demo
+  @UngLuong @DN_02
   Scenario: Cập nhật tên doanh nghiệp mới
     When Nhập value vào nhiều field
       | label            | value      |
@@ -28,7 +28,7 @@ Feature: Admin Mbox - Config Ứng Lương
     When Click button "Cập nhật" bản ghi
     Then Hiển thị alert thành công
 
-  @UngLuong @DN_03 @demo
+  @UngLuong @DN_03
   Scenario: Cập nhật tên viết tắt mới
     When Nhập value vào nhiều field
       | label        | value      |
@@ -41,7 +41,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | Tên viết tắt | valueNumber_1 |
 
 
-  @UngLuong @DN_04 @demo
+  @UngLuong @DN_04
   Scenario: Cập nhật chỉnh sửa email đúng định dạng
     When Nhập value vào nhiều field
       | label | value                |
@@ -53,7 +53,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | label | value         |
       | Email | valueNumber_1 |
 
-  @UngLuong @DN_05 @demo
+  @UngLuong @DN_05
   Scenario: Cập nhật chỉnh sửa email sai định dạng
     When Nhập value vào nhiều field
       | label | value           |
@@ -62,7 +62,7 @@ Feature: Admin Mbox - Config Ứng Lương
     Then Hiển thị alert thông báo lỗi
       | Trường email có định dạng không hợp lệ. |
 
-  @UngLuong @DN_06  @demo #failed
+  @UngLuong @DN_06 #failed
   Scenario: Cập nhật chỉnh sửa email đã tồn tại trong database
     When Nhập value vào nhiều field
       | label | value              |
@@ -71,7 +71,7 @@ Feature: Admin Mbox - Config Ứng Lương
     Then Hiển thị alert thông báo lỗi
       | Trường email có định dạng không hợp lệ. |
 
-  @UngLuong @DN_07 @demo
+  @UngLuong @DN_07
   Scenario: Cập nhật chỉnh sửa số điện thoại đúng định dạng
     When Nhập value vào nhiều field
       | label       | value             |
@@ -87,16 +87,16 @@ Feature: Admin Mbox - Config Ứng Lương
   Scenario: Cập nhật chỉnh sửa sđt đã tồn tại trong database
     When Nhập value vào nhiều field
       | label       | value             |
-      | Điện thoại* | 0123456789 |
+      | Điện thoại* | _randomNumber_10_ |
     When Click button "Cập nhật" bản ghi
     Then Hiển thị alert thông báo lỗi
       | Số điện thoại đã được sử dụng |
 
-  @UngLuong @DN_09 @demo #failed
+  @UngLuong @DN_09 #failed
   Scenario: Cập nhật chỉnh sửa số điện thoại không đúng định dạng
     When Nhập value vào nhiều field
       | label       | value             |
-      | Điện thoại* | 8_randomNumber_9_ |
+      | Điện thoại* | _randomNumber_10_ |
     When Click button "Cập nhật" bản ghi
     Then Hiển thị alert thông báo lỗi
       | Trường tel có định dạng không hợp lệ. |
@@ -385,14 +385,14 @@ Feature: Admin Mbox - Config Ứng Lương
   Scenario: Cập nhật phí giao dịch tối đa > phí giao dịch tối thiểu
     And Nhập value vào nhiều field
       | label                      | value   |
-      | Phí/Giao dịch tối thiểu(đ) | 700 |
+      | Phí/Giao dịch tối thiểu(đ) | 2300000 |
       | Phí/Giao dịch tối đa(đ)    | 9800000 |
     And Click button "Cập nhật" bản ghi
     Then Hiển thị alert thành công
     When Refresh the web
     Then Verify dữ liệu hiển thị ở trường input
       | label                      | value      |
-      | Phí/Giao dịch tối thiểu(đ) | 700.00 |
+      | Phí/Giao dịch tối thiểu(đ) | 2300000.00 |
       | Phí/Giao dịch tối đa(đ)    | 9800000.00 |
 
   @UngLuong @DN_36
@@ -417,15 +417,15 @@ Feature: Admin Mbox - Config Ứng Lương
   Scenario: Cập nhật phí giao dịch tối đa = phí giao dịch tối thiểu
     And Nhập value vào nhiều field
       | label                      | value      |
-      | Phí/Giao dịch tối thiểu(đ) | 700 |
-      | Phí/Giao dịch tối đa(đ)    | 700 |
+      | Phí/Giao dịch tối thiểu(đ) | 5000000 |
+      | Phí/Giao dịch tối đa(đ)    | 5000000 |
     And Click button "Cập nhật" bản ghi
     Then Hiển thị alert thành công
     When Refresh the web
     Then Verify dữ liệu hiển thị ở trường input
       | label                      | value      |
-      | Phí/Giao dịch tối thiểu(đ) | 700.00 |
-      | Phí/Giao dịch tối đa(đ)    | 700.00 |
+      | Phí/Giao dịch tối thiểu(đ) | 5000000.00 |
+      | Phí/Giao dịch tối đa(đ)    | 5000000.00 |
 
   @UngLuong @DN_39 @DN_41
   Scenario Outline: Bỏ trống hoặc nhập tỷ lệ ứng trước lương bằng 0
@@ -481,6 +481,7 @@ Feature: Admin Mbox - Config Ứng Lương
 
   @UngLuong @DN_43
   Scenario: Cập nhật % tỷ lệ ứng trước lương không hợp lệ
+
     When Nhập value vào nhiều field
       | label                     | value                                    |
       | Tỷ lệ ứng trước lương (%) | specia!@#$%^&*()_+-=?><"\|"\|\~!`[];':" |
@@ -617,7 +618,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | label                     | value |
       | Ngày công chuẩn mỗi tháng |       |
 
-  @UngLuong @DN_52 @demo
+  @UngLuong @DN_52
   Scenario Outline: Cập nhật ngày chốt lương hợp lệ
     When Select option ở nhiều field
       | label   | value |
@@ -625,14 +626,14 @@ Feature: Admin Mbox - Config Ứng Lương
     When Click button "Cập nhật" bản ghi
     Then Hiển thị alert thành công
     When Refresh the web
-    Then Option value đã select
+    Then Verify dữ liệu hiển thị ở trường input
       | label   | value |
       | <label> | <day> |
     Examples:
       | label           | day |
       | Ngày chốt lương | 15  |
 
-  @UngLuong @DN_56 @demo
+  @UngLuong @DN_56
   Scenario Outline: Cập nhật ngày khóa ứng lương hợp lệ
     And Truy cập theo menu
       | Doanh nghiệp |
@@ -656,7 +657,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | date      | value         |
       | today_-10 | valueNumber_1 |
 
-  @UngLuong @DN_58 @demo
+  @UngLuong @DN_58
   Scenario Outline: Cập nhật ngày khóa ứng lương hợp lệ
     And Truy cập theo menu
       | Doanh nghiệp |
@@ -680,7 +681,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | date     | value         |
       | today_10 | valueNumber_1 |
 
-  @UngLuong @DN_59 @demo
+  @UngLuong @DN_59
   Scenario Outline: Cập nhật ngày khóa ứng lương hợp lệ
     And Truy cập theo menu
       | Doanh nghiệp |
@@ -704,7 +705,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | date   | value         |
       | today_0 | valueNumber_1 |
 
-  @UngLuong @DN_60 @demo
+  @UngLuong @DN_60
   Scenario Outline: Cập nhật ngày khóa ứng lương là ngày trong quá khứ
     And Truy cập theo menu
       | Doanh nghiệp |
@@ -728,7 +729,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | date      | value         |
       | today_-15 | valueNumber_1 |
 
-  @UngLuong @DN_61 @demo
+  @UngLuong @DN_61
   Scenario: Cập nhật để trống ngày khóa ứng lương
     And Truy cập theo menu
       | Doanh nghiệp |
@@ -748,7 +749,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | label               | value |
       | Ngày khóa ứng lương |       |
 
-  @UngLuong @DN_62 @demo
+  @UngLuong @DN_62
   Scenario: Cập nhật để trống ngày khóa ứng lương
     And Chọn radio button ở nhiều field
       | label                        | value              |
@@ -770,7 +771,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | Mã số thuế                   | 8_randomNumber_8_-852                    |
       | textarea_Mô tả               | +random_36_                              |
       | Phí/Giao dịch (%)            | 15                                       |
-      | Phí/Giao dịch tối thiểu(đ)   | 700                                 |
+      | Phí/Giao dịch tối thiểu(đ)   | 2300000                                  |
       | Phí/Giao dịch tối đa(đ)      | 9800000                                  |
       | Tỷ lệ ứng trước lương (%)    | 45                                       |
       | Mức ứng tối đa/nhân sự/tháng | 10000000                                 |
@@ -792,7 +793,7 @@ Feature: Admin Mbox - Config Ứng Lương
       | Mã số thuế                   | valueNumber_7                            |
       | textarea_Mô tả               | valueNumber_8                            |
       | Phí/Giao dịch (%)            | 15                                       |
-      | Phí/Giao dịch tối thiểu(đ)   | 700.00                               |
+      | Phí/Giao dịch tối thiểu(đ)   | 2300000.00                               |
       | Phí/Giao dịch tối đa(đ)      | 9800000.00                               |
       | Tỷ lệ ứng trước lương (%)    | 45                                       |
       | Mức ứng tối đa/nhân sự/tháng | 10000000.00                              |

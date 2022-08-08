@@ -19,7 +19,6 @@ public class LoginPage extends PageBase {
     public WebElement fillPassword;
     @FindBy(how = How.XPATH, using = "//button[@type= 'submit']")
     public WebElement btnLogin;
-
     public void iFillLoginAs(String username) {
         fillAccount.sendKeys(username);
     }
@@ -35,14 +34,18 @@ public class LoginPage extends PageBase {
     public void loginSucessWithAcc(String acc) {
         String username = null;
         String password = null;
+        String titleExpect = null;
         switch (acc) {
             case "Admin_Mbox":
                 username = "admin";
                 password = "admin@123";
+                titleExpect = "beta.mbox.vn - Tổng quan";
                 break;
             case "Admin_DN":
                 username = "mboxAuto";
                 password = "admin@123";
+                titleExpect = "Tổng quan số liệu kỳ lương hiện tại của công ty | Auto_Dn | mBox";
+
                 break;
             default:
                 System.out.println("Không phải account admin đã config.");
@@ -51,6 +54,6 @@ public class LoginPage extends PageBase {
         iFillLoginAs(username);
         iFillPasswordAs(password);
         iClickOnSubmitButton();
-        Assert.assertEquals(driver.getTitle(), "beta.mbox.vn - Tổng quan");
+        Assert.assertEquals(driver.getTitle(), titleExpect);
     }
 }

@@ -1,14 +1,18 @@
 package stepdefinition;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pages.CommonPage;
 import pages.HomePage;
+
 import java.util.List;
 import java.util.Map;
+
 import static core.PageBase.*;
 import static pages.HomePage.waitforPageLoad;
 
@@ -40,49 +44,41 @@ public class CommonSteps {
 
     @When("Nhập value vào nhiều field")
     public void nhapValueVaoNhieuField(DataTable dataTable) {
+        WebElement element ;
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> stringStringMap : list) {
             String value = stringStringMap.get("value");
             String label = stringStringMap.get("label");
             waitforPageLoad();
-            if (value != null) {
-                if (value.contains("today_")) {
-                    int datePlus = Integer.parseInt(value.split("_")[1]) - 1;
-                    value = todayPlusDate(datePlus);
-                    globalVariable.add(value);
-                } else if (value.contains("random_")) {
-                    int quantity = Integer.parseInt(value.substring(8, value.lastIndexOf("_")));
-                    String text = randomKey(quantity);
-                    value = value.substring(0, value.lastIndexOf("+")) + text + value.substring(value.lastIndexOf("_") + 1);
-                    globalVariable.add(value);
-                } else if (value.contains("randomNumber_")) {
-                    System.out.println(value.substring(15, value.lastIndexOf("_")));
-
-                    int quantity = Integer.parseInt(value.substring(15, value.lastIndexOf("_")));
-                    String text = randomNumber(quantity);
-                    value = value.substring(0, value.indexOf("_")) + text + value.substring(value.lastIndexOf("_") + 1);
-                    globalVariable.add(value);
-                }
-
-                if (label.contains("textarea")) {
-                    label = label.split("_")[1];
-                    commonPage.textareaWithLabel(label).clear();
-                    actions.moveToElement(commonPage.textareaWithLabel(label));
-                    commonPage.textareaWithLabel(label).sendKeys(value);
-                } else {
-                    commonPage.inputWithLabel(label).clear();
-                    actions.moveToElement(commonPage.inputWithLabel(label));
-                    commonPage.inputWithLabel(label).sendKeys(value);
-                }
+            if(value ==null){
+                value = "";
             }
-            else {
-                if (label.contains("textarea")) {
-                    label = label.split("_")[1];
-                    commonPage.textareaWithLabel(label).clear();
-                } else {
-                    commonPage.inputWithLabel(label).clear();
-                }
+            else if (value.contains("today_")) {
+                int datePlus = Integer.parseInt(value.split("_")[1]) - 1;
+                value = todayPlusDate(datePlus);
+                globalVariable.add(value);
+            } else if (value.contains("random_")) {
+                int quantity = Integer.parseInt(value.substring(8, value.lastIndexOf("_")));
+                String text = randomKey(quantity);
+                value = value.substring(0, value.lastIndexOf("+")) + text + value.substring(value.lastIndexOf("_") + 1);
+                globalVariable.add(value);
+            } else if (value.contains("randomNumber_")) {
+                int quantity = Integer.parseInt(value.substring(15, value.lastIndexOf("_")));
+                String text = randomNumber(quantity);
+                value = value.substring(0, value.indexOf("_")) + text + value.substring(value.lastIndexOf("_") + 1);
+                globalVariable.add(value);
             }
+            if (label.contains("textarea")) {
+                label = label.split("_")[1];
+                element = commonPage.textareaWithLabel(label);
+            } else {
+                element = commonPage.inputWithLabel(label);
+            }
+            element.clear();
+            actions.moveToElement(element);
+            element.clear();
+            element.sendKeys(value);
+
         }
 
     }
@@ -101,7 +97,7 @@ public class CommonSteps {
     public void verifyAlertSuccess(DataTable dataTable) {
         List<String> list = dataTable.asList(String.class);
         for (String msg : list) {
-            Assert.assertEquals(msg, commonPage.alert.getText());
+            Assert.assertEquals( commonPage.alert.getText(),msg,"Assert Failed.Expect:"+ msg+ "but actual : "+ commonPage.alert.getText());
         }
     }
 
@@ -116,14 +112,13 @@ public class CommonSteps {
         for (Map<String, String> stringStringMap : list) {
             String value = stringStringMap.get("value");
             String label = stringStringMap.get("label");
-            String actual ;
+            String actual;
             waitforPageLoad();
             Thread.sleep(5000);
-            if (label.contains("textarea")){
+            if (label.contains("textarea")) {
                 label = label.split("_")[1];
                 actual = commonPage.textareaWithLabel(label).getAttribute("value");
-            }
-            else {
+            } else {
                 actual = commonPage.inputWithLabel(label).getAttribute("value");
             }
             if (value != null) {
@@ -134,7 +129,6 @@ public class CommonSteps {
             } else {
                 value = "";
             }
-
             Assert.assertEquals(actual, value, "Assert failed. Expect: " + value + " but actual: " + actual);
         }
     }
@@ -159,6 +153,7 @@ public class CommonSteps {
             commonPage.btnRadio(label, value).click();
         }
     }
+
     @When("Select option ở nhiều field")
     public void selectVaoNhieuField(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
@@ -208,15 +203,17 @@ public class CommonSteps {
             Assert.assertEquals(actual, expect, "Assert failed. Expect: " + expect + " but actual: " + actual);
         }
     }
+
     @When("Import file với đường dẫn vào label")
     public void importFilr(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> stringMap : list) {
-            String path = System.getProperty("user.dir") +"/src/test/resources/dataTest"+ stringMap.get("path");
+            String path = System.getProperty("user.dir") + "/src/test/resources/dataTest" + stringMap.get("path");
             commonPage.inputFile(stringMap.get("name")).sendKeys(path);
 
         }
     }
+
     @Then("Option value đã select")
     public void verifySelectValue(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
@@ -228,4 +225,19 @@ public class CommonSteps {
             Assert.assertTrue(actual, "Assert failed. Expect: true but actual: " + actual);
         }
     }
+
+    @When("Chọn checkbox ở nhiều field")
+    public void choCheckboxVaoNhieuField(DataTable dataTable) {
+        List<String> list = dataTable.asList(String.class);
+        for (String value : list) {
+            commonPage.checkBox(value).click();
+        }
+    }
+
+    @Given("Chuyển sang page title {string}")
+    public void chuyenSangPageTitle(String title) {
+        driver.switchTo().window("title");
+        Assert.assertEquals( driver.getTitle(),title, "Assert Fail. Expect " + title + ". But Actual: " + driver.getTitle());
+    }
+
 }
