@@ -9,7 +9,7 @@ import java.util.List;
 public class HomePageSteps {
     HomePage homePage = new HomePage();
 
-    @When("Truy cập theo menu")
+    @When("Truy cap theo menu")
     public void navigateMenu(DataTable dataTable) {
         List<String> list = dataTable.asList(String.class);
         if (list.size() != 1) {

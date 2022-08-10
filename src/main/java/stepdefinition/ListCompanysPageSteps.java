@@ -5,7 +5,7 @@ import pages.ListCompanysPage;
 
 public class ListCompanysPageSteps {
     ListCompanysPage listCompanysPage =new ListCompanysPage();
-    @When("Click Hành Động {string}")
+    @When("Click Hanh Đong {string}")
     public void navigateMenu(String action) {
         listCompanysPage.viewDetail(action).click();
     }

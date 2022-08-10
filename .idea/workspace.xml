@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07747436-9c15-4ba6-ba79-8480e42d0107" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CommonSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/CompanySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/HomePageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/HomePageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/ListCompanysPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/ListCompanysPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinition/LoginPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinition/LoginPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminDN/ImportCong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminDN/ImportCong.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminDN/giaoDichUngLuong/giaoDichUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminDN/giaoDichUngLuong/giaoDichUngLuong.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminDN/tinhCong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminDN/tinhCong.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/9pay/ConfigUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/9pay/ConfigUngLuong.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/AdminMbox/doanhNghiep/ConfigUngLuong.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

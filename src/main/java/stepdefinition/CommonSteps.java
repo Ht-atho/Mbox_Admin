@@ -32,7 +32,7 @@ public class CommonSteps {
     }
 
     //    tìm kiếm vói 1 trường
-    @When("Tìm kiếm với keyword và nhấn Enter")
+    @When("Tim kiem voi keyword va nhan Enter")
     public void searchEnter(DataTable dataTable) {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> stringMap : list) {
@@ -42,7 +42,7 @@ public class CommonSteps {
         }
     }
 
-    @When("Nhập value vào nhiều field")
+    @When("Nhap value vao nhieu field")
     public void nhapValueVaoNhieuField(DataTable dataTable) {
         WebElement element ;
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
@@ -83,17 +83,17 @@ public class CommonSteps {
 
     }
 
-    @When("Click button {string} bản ghi")
+    @When("Click button {string} ban ghi")
     public void clickBtnEditBanGhi(String action) {
         commonPage.btnEditThongtin(action).click();
     }
 
-    @Then("Hiển thị alert thành công")
+    @Then("Hien thi alert thanh cong")
     public void verifyAlertSuccess() {
         commonPage.alertSuccess.isDisplayed();
     }
 
-    @Then("Hiển thị alert thông báo lỗi")
+    @Then("Hien thi alert thong bao loi")
     public void verifyAlertSuccess(DataTable dataTable) {
         List<String> list = dataTable.asList(String.class);
         for (String msg : list) {
@@ -106,7 +106,7 @@ public class CommonSteps {
         commonPage.refreshWeb();
     }
 
-    @Then("Verify dữ liệu hiển thị ở trường input")
+    @Then("Verify du lieu hien thi o truong input")
     public void verifyDataValue(DataTable dataTable) throws InterruptedException {
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> stringStringMap : list) {

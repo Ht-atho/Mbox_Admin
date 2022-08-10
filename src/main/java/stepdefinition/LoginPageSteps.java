@@ -6,7 +6,7 @@ import pages.LoginPage;
 public class LoginPageSteps {
     LoginPage loginPage = new LoginPage();
 
-    @Given("{string} đăng nhập thành công vào Mbox Admin")
+    @Given("{string} dang nhap thanh cong vao Mbox Admin")
     public void loginSuccess(String account) {
         loginPage.loginSucessWithAcc(account);
     }

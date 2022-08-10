@@ -2,17 +2,17 @@ Feature: AdminDN - Tính công
 
   @TinhCong @Precondition
   Scenario: Tạo lịch làm việc cho nhân viên
-    Given "Admin_Mbox" đăng nhập thành công vào Mbox Admin
-    And Truy cập theo menu
+    Given "Admin_Mbox" dang nhap thanh cong vao Mbox Admin
+    And Truy cap theo menu
       | Doanh nghiệp |
       | Danh sách    |
-    When Tìm kiếm với keyword và nhấn Enter
+    When Tim kiem voi keyword va nhan Enter
       | textBox          | key     |
       | Tên doanh nghiệp | Auto_DN |
-    When Click Hành Động "Xem chi tiết"
+    When Click Hanh Đong "Xem chi tiết"
     When Click button "Lịch làm việc" in Doanh nghiep page
     When Click button "Tạo lịch làm việc mới" in Doanh nghiep page
-    When Nhập value vào nhiều field
+    When Nhap value vao nhieu field
       | label               | value                 |
       | Tên ca làm việc mới | +random_8_ hành chính |
       | Hệ số tính công     | 1                     |
